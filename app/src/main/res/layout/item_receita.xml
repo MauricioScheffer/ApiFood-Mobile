@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Item da lista de receitas salvas: imagem + nome + categoria + detalhes + estrela -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margem_tela"
+    android:layout_marginTop="6dp"
+    android:layout_marginEnd="@dimen/margem_tela"
+    android:layout_marginBottom="6dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/ivImagem"
+            android:layout_width="@dimen/tamanho_imagem_item"
+            android:layout_height="@dimen/tamanho_imagem_item"
+            android:background="@color/cor_fundo_imagem"
+            android:contentDescription="@string/desc_imagem_receita"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_receita_placeholder" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvCategoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tvDetalhes"
+                style="@style/TextoSecundario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivFavorita"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/desc_favorita"
+            android:padding="12dp"
+            android:src="@drawable/ic_star_border" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

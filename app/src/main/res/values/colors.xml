@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta do tema claro (o tema escuro sobrescreve em values-night/colors.xml) -->
+    <color name="cor_primaria">#E65100</color>
+    <color name="cor_primaria_escura">#BF360C</color>
+    <color name="cor_secundaria">#2E7D32</color>
+    <color name="cor_secundaria_escura">#1B5E20</color>
+    <color name="cor_sobre_primaria">#FFFFFF</color>
+    <color name="cor_sobre_secundaria">#FFFFFF</color>
+    <color name="cor_texto_secundario">#666666</color>
+    <color name="cor_fundo_imagem">#FFE0B2</color>
+    <color name="cor_erro">#C62828</color>
+    <color name="cor_estrela">#FFB300</color>
+    <color name="cor_estrela_vazia">#9E9E9E</color>
+    <color name="cor_icone_launcher">#E65100</color>
+    <color name="branco">#FFFFFF</color>
+</resources>

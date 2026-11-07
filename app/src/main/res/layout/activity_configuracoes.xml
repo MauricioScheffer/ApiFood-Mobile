@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Preferências do usuário salvas em SharedPreferences -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/raiz"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margem_tela">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNomeUsuario"
+            style="@style/CampoFormulario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_seu_nome">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNomeUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName|textCapWords"
+                android:maxLength="40" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            style="@style/TextoTituloSecao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_tema" />
+
+        <RadioGroup
+            android:id="@+id/rgTema"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rbTemaSistema"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tema_sistema" />
+
+            <RadioButton
+                android:id="@+id/rbTemaClaro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tema_claro" />
+
+            <RadioButton
+                android:id="@+id/rbTemaEscuro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tema_escuro" />
+        </RadioGroup>
+
+        <TextView
+            style="@style/TextoTituloSecao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_fonte_dados" />
+
+        <Spinner
+            android:id="@+id/spFonteDados"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:entries="@array/fontes_dados" />
+
+        <TextView
+            style="@style/TextoSecundario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/aviso_bancos_separados"
+            android:textSize="12sp" />
+
+        <!-- Só aparece quando a fonte escolhida é MySQL -->
+        <LinearLayout
+            android:id="@+id/layoutServidor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilUrlServidor"
+                style="@style/CampoFormulario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_url_servidor"
+                app:helperText="@string/helper_url_servidor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etUrlServidor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textUri" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTestarConexao"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espaco_pequeno"
+                android:text="@string/btn_testar_conexao" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSalvarConfig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/btn_salvar" />
+    </LinearLayout>
+</ScrollView>

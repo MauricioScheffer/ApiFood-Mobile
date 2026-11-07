@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        No Android 15 (API 35) os apps ficam "edge-to-edge" por padrão e o conteúdo pode
+        ficar atrás das barras do sistema. Este item mantém o comportamento clássico.
+    -->
+    <style name="Theme.Receitas" parent="Base.Theme.Receitas">
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+    </style>
+</resources>

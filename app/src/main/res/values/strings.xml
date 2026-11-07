@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Todos os textos do app ficam aqui (requisito R2: nada "chumbado" nos layouts). -->
+<resources>
+    <string name="app_name">Cozinha Fácil</string>
+
+    <!-- ===== Títulos das telas ===== -->
+    <string name="titulo_minhas_receitas">Minhas receitas</string>
+    <string name="titulo_nova_receita">Nova receita</string>
+    <string name="titulo_editar_receita">Editar receita</string>
+    <string name="titulo_detalhe">Detalhes da receita</string>
+    <string name="titulo_explorar">Explorar receitas</string>
+    <string name="titulo_detalhe_api">Receita da TheMealDB</string>
+    <string name="titulo_configuracoes">Configurações</string>
+
+    <!-- ===== Menu da ActionBar ===== -->
+    <string name="menu_atualizar">Atualizar</string>
+    <string name="menu_configuracoes">Configurações</string>
+    <string name="menu_sobre">Sobre</string>
+    <string name="sobre_titulo">Sobre o app</string>
+    <string name="sobre_mensagem">%1$s — versão %2$s\n\nCatálogo de receitas desenvolvido para a disciplina de Desenvolvimento de Aplicações para Dispositivos Móveis (IFSUL).\n\nReceitas externas fornecidas pela API pública TheMealDB (themealdb.com).</string>
+
+    <!-- ===== Comuns ===== -->
+    <string name="ok">OK</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="desc_imagem_receita">Foto da receita</string>
+    <string name="carregando">Carregando…</string>
+    <string name="btn_tentar_novamente">Tentar novamente</string>
+
+    <!-- ===== Home ===== -->
+    <string name="saudacao_com_nome">Olá, %1$s!</string>
+    <string name="saudacao_sem_nome">Olá! Bem-vindo(a)</string>
+    <string name="home_subtitulo">O que vamos cozinhar hoje?</string>
+    <string name="resumo_receitas">Você tem %1$d receita(s) salva(s), sendo %2$d favorita(s).</string>
+    <string name="fonte_sqlite_label">Salvando em: SQLite (no aparelho)</string>
+    <string name="fonte_mysql_label">Salvando em: MySQL (%1$s)</string>
+    <string name="receita_do_dia">Receita do dia</string>
+    <string name="receita_do_dia_toque">Toque para ver a receita completa</string>
+    <string name="btn_minhas_receitas">Minhas receitas</string>
+    <string name="btn_nova_receita">Cadastrar nova receita</string>
+    <string name="btn_explorar">Explorar receitas (TheMealDB)</string>
+
+    <!-- ===== Listagem ===== -->
+    <string name="hint_buscar_nome">Buscar pelo nome</string>
+    <string name="somente_favoritas">Só favoritas</string>
+    <string name="todas_categorias">Todas as categorias</string>
+    <string name="lista_vazia">Nenhuma receita encontrada.\nToque no + para cadastrar.</string>
+    <string name="desc_nova_receita">Cadastrar nova receita</string>
+    <string name="desc_favorita">Marcar ou desmarcar como favorita</string>
+    <string name="item_detalhes">%1$d min • %2$d porção(ões) • %3$s</string>
+    <string name="confirmar_exclusao_titulo">Excluir receita?</string>
+    <string name="confirmar_exclusao_msg">A receita \"%1$s\" será excluída permanentemente. Deseja continuar?</string>
+    <string name="receita_excluida">Receita excluída.</string>
+    <string name="receita_salva">Receita salva com sucesso!</string>
+    <string name="receita_atualizada">Receita atualizada!</string>
+    <string name="favorita_adicionada">Adicionada às favoritas</string>
+    <string name="favorita_removida">Removida das favoritas</string>
+    <string name="total_receitas">%1$d receita(s)</string>
+
+    <!-- ===== Formulário (cadastro/edição) ===== -->
+    <string name="hint_nome">Nome da receita *</string>
+    <string name="label_categoria">Categoria *</string>
+    <string name="selecione_categoria">Selecione uma categoria</string>
+    <string name="hint_origem">Origem (país ou região)</string>
+    <string name="hint_tempo">Tempo (min) *</string>
+    <string name="hint_porcoes">Porções *</string>
+    <string name="hint_data">Data (dd/mm/aaaa) *</string>
+    <string name="desc_escolher_data">Escolher data no calendário</string>
+    <string name="label_dificuldade">Dificuldade *</string>
+    <string name="dificuldade_facil">Fácil</string>
+    <string name="dificuldade_medio">Médio</string>
+    <string name="dificuldade_dificil">Difícil</string>
+    <string name="hint_ingredientes">Ingredientes *</string>
+    <string name="helper_ingredientes">Um ingrediente por linha</string>
+    <string name="hint_modo_preparo">Modo de preparo *</string>
+    <string name="hint_imagem_url">URL da imagem (opcional)</string>
+    <string name="helper_imagem_url">Ex.: https://site.com/foto.jpg</string>
+    <string name="label_favorita">Marcar como favorita</string>
+    <string name="btn_salvar">Salvar</string>
+    <string name="campos_obrigatorios">* Campos obrigatórios</string>
+    <string name="form_com_erros">Corrija os campos destacados em vermelho.</string>
+    <string name="salvando">Salvando…</string>
+    <string name="importar_complete">Confira os dados e complete o tempo e as porções antes de salvar.</string>
+
+    <!-- ===== Mensagens de validação e erro ===== -->
+    <string name="erro_obrigatorio">Campo obrigatório</string>
+    <string name="erro_minimo_caracteres">Mínimo de %1$d caracteres</string>
+    <string name="erro_maximo_caracteres">Máximo de %1$d caracteres</string>
+    <string name="erro_numero_invalido">Digite um número inteiro válido</string>
+    <string name="erro_faixa">Informe um valor entre %1$d e %2$d</string>
+    <string name="erro_data_invalida">Data inválida. Use o formato dd/mm/aaaa</string>
+    <string name="erro_data_futura">A data não pode estar no futuro</string>
+    <string name="erro_url_invalida">URL inválida. Deve começar com http:// ou https://</string>
+    <string name="erro_categoria">Selecione uma categoria</string>
+    <string name="erro_dificuldade">Selecione a dificuldade</string>
+    <string name="erro_sem_internet">Sem conexão com a internet. Verifique sua rede e tente novamente.</string>
+    <string name="erro_timeout">O servidor demorou para responder. Tente novamente.</string>
+    <string name="erro_servidor_indisponivel">Não foi possível conectar ao servidor. Verifique se o Apache e o MySQL estão ligados e a URL em Configurações.</string>
+    <string name="erro_resposta_invalida">O servidor enviou uma resposta inválida.</string>
+    <string name="erro_http">Erro no servidor (código %1$d).</string>
+    <string name="erro_rede_generico">Falha de comunicação com o servidor.</string>
+    <string name="erro_inesperado">Ocorreu um erro inesperado.</string>
+    <string name="erro_receita_nao_encontrada">Receita não encontrada.</string>
+    <string name="erro_banco_local">Erro ao acessar o banco de dados do aparelho.</string>
+    <string name="erro_abrir_link">Nenhum app disponível para abrir este link.</string>
+
+    <!-- ===== Detalhes da receita salva ===== -->
+    <string name="label_ingredientes">Ingredientes</string>
+    <string name="label_modo_preparo">Modo de preparo</string>
+    <string name="btn_editar">Editar</string>
+    <string name="btn_excluir">Excluir</string>
+    <string name="btn_compartilhar">Compartilhar</string>
+    <string name="detalhe_categoria_origem">%1$s • %2$s</string>
+    <string name="detalhe_data">Data: %1$s</string>
+    <string name="detalhe_favorita">★ Favorita</string>
+    <string name="compartilhar_titulo">Compartilhar receita via</string>
+    <string name="compartilhar_texto">%1$s\n\nIngredientes:\n%2$s\n\nModo de preparo:\n%3$s\n\nEnviado pelo app %4$s</string>
+
+    <!-- ===== Explorar (TheMealDB) ===== -->
+    <string name="hint_buscar_api">Buscar (em inglês, ex.: chicken)</string>
+    <string name="btn_buscar">Buscar</string>
+    <string name="filtrar_categoria_api">Filtrar por categoria da API</string>
+    <string name="explorar_instrucao">Digite o nome de um prato ou escolha uma categoria para buscar receitas.</string>
+    <string name="explorar_vazio">Nenhuma receita encontrada para \"%1$s\".</string>
+    <string name="aviso_api_ingles">Os dados da TheMealDB estão em inglês.</string>
+    <string name="erro_busca_vazia">Digite algo para buscar</string>
+
+    <!-- ===== Detalhes da receita da API ===== -->
+    <string name="btn_salvar_nas_minhas">Salvar nas minhas receitas</string>
+    <string name="btn_youtube">Ver vídeo no YouTube</string>
+
+    <!-- ===== Configurações ===== -->
+    <string name="hint_seu_nome">Seu nome *</string>
+    <string name="label_tema">Tema do app</string>
+    <string name="tema_sistema">Padrão do sistema</string>
+    <string name="tema_claro">Claro</string>
+    <string name="tema_escuro">Escuro</string>
+    <string name="label_fonte_dados">Onde salvar as receitas</string>
+    <string name="hint_url_servidor">URL do servidor PHP *</string>
+    <string name="helper_url_servidor">Emulador: http://10.0.2.2/receitas-api/ — Celular: http://IP-DO-PC/receitas-api/</string>
+    <string name="btn_testar_conexao">Testar conexão</string>
+    <string name="testando_conexao">Testando conexão…</string>
+    <string name="conexao_ok">Conexão OK! %1$d receita(s) no MySQL.</string>
+    <string name="configuracoes_salvas">Configurações salvas!</string>
+    <string name="aviso_bancos_separados">SQLite e MySQL são bancos separados: as receitas de um não aparecem no outro.</string>
+
+    <!-- Categorias do app. ATENÇÃO: a ordem é usada pelo CategoriaMapper. -->
+    <string-array name="categorias">
+        <item>Carnes</item>
+        <item>Aves</item>
+        <item>Peixes e frutos do mar</item>
+        <item>Massas</item>
+        <item>Sobremesas</item>
+        <item>Café da manhã</item>
+        <item>Entradas</item>
+        <item>Vegetariana</item>
+        <item>Acompanhamentos</item>
+        <item>Outros</item>
+    </string-array>
+
+    <!-- Ordem igual às constantes FONTE_SQLITE (0) e FONTE_MYSQL (1) -->
+    <string-array name="fontes_dados">
+        <item>SQLite (no aparelho)</item>
+        <item>MySQL (servidor PHP)</item>
+    </string-array>
+</resources>

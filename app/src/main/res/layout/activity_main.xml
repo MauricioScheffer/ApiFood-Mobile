@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Home: saudação, resumo, receita do dia (API) e atalhos para as outras telas -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/raiz"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margem_tela">
+
+        <TextView
+            android:id="@+id/tvSaudacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="@string/saudacao_sem_nome" />
+
+        <TextView
+            style="@style/TextoSecundario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/home_subtitulo" />
+
+        <TextView
+            android:id="@+id/tvResumo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/espaco_pequeno"
+            android:text="@string/carregando" />
+
+        <TextView
+            android:id="@+id/tvFonteDados"
+            style="@style/TextoSecundario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp" />
+
+        <!-- Card "Receita do dia" vindo da API TheMealDB (random.php) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardReceitaDia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margem_tela"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/altura_imagem_card"
+                    android:background="@color/cor_fundo_imagem">
+
+                    <ImageView
+                        android:id="@+id/ivReceitaDia"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/desc_imagem_receita"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_receita_placeholder" />
+
+                    <ProgressBar
+                        android:id="@+id/pbReceitaDia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/receita_do_dia"
+                        android:textColor="?attr/colorPrimary"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvReceitaDiaNome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvReceitaDiaInfo"
+                        style="@style/TextoSecundario"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/receita_do_dia_toque" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMinhasReceitas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margem_tela"
+            android:text="@string/btn_minhas_receitas" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNovaReceita"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_nova_receita" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnExplorar"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_explorar" />
+    </LinearLayout>
+</ScrollView>

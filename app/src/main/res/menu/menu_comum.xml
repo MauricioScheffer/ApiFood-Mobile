@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Menu de opções da ActionBar, compartilhado por todas as telas (BaseActivity). -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_atualizar"
+        android:title="@string/menu_atualizar"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_configuracoes"
+        android:title="@string/menu_configuracoes"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_sobre"
+        android:title="@string/menu_sobre"
+        app:showAsAction="never" />
+</menu>

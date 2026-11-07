@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Detalhes de uma receita da API TheMealDB, com opção de salvar nas receitas do usuário -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/raiz"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scrollConteudo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivImagem"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/altura_imagem_detalhe"
+                android:background="@color/cor_fundo_imagem"
+                android:contentDescription="@string/desc_imagem_receita"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_receita_placeholder" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/margem_tela">
+
+                <TextView
+                    android:id="@+id/tvNome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvCategoriaArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="?attr/colorPrimary" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSalvarNasMinhas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/btn_salvar_nas_minhas" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnYoutube"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btn_youtube"
+                    android:visibility="gone" />
+
+                <TextView
+                    style="@style/TextoTituloSecao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_ingredientes" />
+
+                <TextView
+                    android:id="@+id/tvIngredientes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="4dp"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    style="@style/TextoTituloSecao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_modo_preparo" />
+
+                <TextView
+                    android:id="@+id/tvInstrucoes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="4dp"
+                    android:textIsSelectable="true" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/pbCarregando"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <LinearLayout
+        android:id="@+id/layoutErro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/margem_tela"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvErro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/cor_erro" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTentarNovamente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/espaco_pequeno"
+            android:text="@string/btn_tentar_novamente" />
+    </LinearLayout>
+</FrameLayout>
