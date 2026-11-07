@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cor_primaria">#FFB74D</color>
+    <color name="cor_primaria_escura">#E65100</color>
+    <color name="cor_secundaria">#81C784</color>
+    <color name="cor_secundaria_escura">#2E7D32</color>
+    <color name="cor_sobre_primaria">#000000</color>
+    <color name="cor_sobre_secundaria">#000000</color>
+    <color name="cor_texto_secundario">#BBBBBB</color>
+    <color name="cor_fundo_imagem">#3E2723</color>
+    <color name="cor_erro">#EF9A9A</color>
+</resources>

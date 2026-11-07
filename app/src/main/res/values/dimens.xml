@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margem_tela">16dp</dimen>
+    <dimen name="espaco_pequeno">8dp</dimen>
+    <dimen name="altura_imagem_detalhe">220dp</dimen>
+    <dimen name="altura_imagem_card">180dp</dimen>
+    <dimen name="tamanho_imagem_item">72dp</dimen>
+    <dimen name="altura_imagem_grade">130dp</dimen>
+</resources>
