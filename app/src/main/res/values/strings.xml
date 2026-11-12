@@ -162,4 +162,121 @@
         <item>SQLite (no aparelho)</item>
         <item>MySQL (servidor PHP)</item>
     </string-array>
+
+    <!-- Tradução dos rótulos exibidos da TheMealDB. Os arrays "chaves" são os valores originais
+         da API (NÃO traduzir: são enviados nos filtros). Mesma ordem dos arrays "nomes". -->
+    <string-array name="api_categorias_chaves">
+        <item>Beef</item>
+        <item>Breakfast</item>
+        <item>Chicken</item>
+        <item>Dessert</item>
+        <item>Goat</item>
+        <item>Lamb</item>
+        <item>Miscellaneous</item>
+        <item>Pasta</item>
+        <item>Pork</item>
+        <item>Seafood</item>
+        <item>Side</item>
+        <item>Starter</item>
+        <item>Vegan</item>
+        <item>Vegetarian</item>
+    </string-array>
+    <string-array name="api_categorias_nomes">
+        <item>Carne bovina</item>
+        <item>Café da manhã</item>
+        <item>Frango</item>
+        <item>Sobremesa</item>
+        <item>Cabrito</item>
+        <item>Cordeiro</item>
+        <item>Diversos</item>
+        <item>Massas</item>
+        <item>Carne suína</item>
+        <item>Frutos do mar</item>
+        <item>Acompanhamento</item>
+        <item>Entrada</item>
+        <item>Vegano</item>
+        <item>Vegetariano</item>
+    </string-array>
+    <string-array name="api_areas_chaves">
+        <item>Algerian</item>
+        <item>American</item>
+        <item>Argentinian</item>
+        <item>Australian</item>
+        <item>British</item>
+        <item>Canadian</item>
+        <item>Chinese</item>
+        <item>Croatian</item>
+        <item>Dutch</item>
+        <item>Egyptian</item>
+        <item>Filipino</item>
+        <item>French</item>
+        <item>Greek</item>
+        <item>Indian</item>
+        <item>Irish</item>
+        <item>Italian</item>
+        <item>Jamaican</item>
+        <item>Japanese</item>
+        <item>Kenyan</item>
+        <item>Malaysian</item>
+        <item>Mexican</item>
+        <item>Moroccan</item>
+        <item>Norwegian</item>
+        <item>Polish</item>
+        <item>Portuguese</item>
+        <item>Russian</item>
+        <item>Saudi Arabian</item>
+        <item>Slovakian</item>
+        <item>Spanish</item>
+        <item>Syrian</item>
+        <item>Thai</item>
+        <item>Tunisian</item>
+        <item>Turkish</item>
+        <item>Ukrainian</item>
+        <item>Unknown</item>
+        <item>Uruguayan</item>
+        <item>Venezulan</item>
+        <item>Venezuelan</item>
+        <item>Vietnamese</item>
+    </string-array>
+    <string-array name="api_areas_nomes">
+        <item>Argelina</item>
+        <item>Americana</item>
+        <item>Argentina</item>
+        <item>Australiana</item>
+        <item>Britânica</item>
+        <item>Canadense</item>
+        <item>Chinesa</item>
+        <item>Croata</item>
+        <item>Holandesa</item>
+        <item>Egípcia</item>
+        <item>Filipina</item>
+        <item>Francesa</item>
+        <item>Grega</item>
+        <item>Indiana</item>
+        <item>Irlandesa</item>
+        <item>Italiana</item>
+        <item>Jamaicana</item>
+        <item>Japonesa</item>
+        <item>Queniana</item>
+        <item>Malaia</item>
+        <item>Mexicana</item>
+        <item>Marroquina</item>
+        <item>Norueguesa</item>
+        <item>Polonesa</item>
+        <item>Portuguesa</item>
+        <item>Russa</item>
+        <item>Saudita</item>
+        <item>Eslovaca</item>
+        <item>Espanhola</item>
+        <item>Síria</item>
+        <item>Tailandesa</item>
+        <item>Tunisiana</item>
+        <item>Turca</item>
+        <item>Ucraniana</item>
+        <item>Desconhecida</item>
+        <item>Uruguaia</item>
+        <item>Venezuelana</item>
+        <item>Venezuelana</item>
+        <item>Vietnamita</item>
+    </string-array>
 </resources>

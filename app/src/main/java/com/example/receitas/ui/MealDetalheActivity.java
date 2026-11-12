@@ -118,7 +118,8 @@ public class MealDetalheActivity extends BaseActivity {
     private void exibir(Meal m) {
         setTitle(m.getNome());
         tvNome.setText(m.getNome());
-        tvCategoriaArea.setText(getString(R.string.detalhe_categoria_origem, m.getCategoria(), m.getArea()));
+        tvCategoriaArea.setText(getString(R.string.detalhe_categoria_origem, CategoriaMapper.categoriaApiPtBr(this, m.getCategoria()),
+                CategoriaMapper.origemApiPtBr(this, m.getArea())));
         tvIngredientes.setText(m.getIngredientesComoTexto());
         tvInstrucoes.setText(m.getInstrucoes());
         btnYoutube.setVisibility(m.getYoutubeUrl().isEmpty() ? View.GONE : View.VISIBLE);
@@ -139,7 +140,7 @@ public class MealDetalheActivity extends BaseActivity {
         Receita r = new Receita();
         r.setNome(meal.getNome());
         r.setCategoria(CategoriaMapper.daApi(this, meal.getCategoria()));
-        r.setOrigem(meal.getArea());
+        r.setOrigem(CategoriaMapper.origemApiPtBr(this, meal.getArea()));
         r.setIngredientes(meal.getIngredientesComoTexto());
         r.setModoPreparo(meal.getInstrucoes());
         r.setImagemUrl(meal.getImagemUrl());

@@ -19,6 +19,7 @@ import com.example.receitas.R;
 import com.example.receitas.model.Meal;
 import com.example.receitas.network.MealDbService;
 import com.example.receitas.ui.adapter.MealAdapter;
+import com.example.receitas.util.CategoriaMapper;
 import com.example.receitas.util.PrefsManager;
 import com.example.receitas.util.ResultCallback;
 import com.google.android.material.textfield.TextInputEditText;
@@ -114,7 +115,9 @@ public class ExplorarActivity extends BaseActivity {
                 if (!isTelaAtiva()) return;
                 List<String> opcoes = new ArrayList<>();
                 opcoes.add(getString(R.string.filtrar_categoria_api));
-                opcoes.addAll(categorias);
+                for (String c : categorias) {
+                    opcoes.add(CategoriaMapper.categoriaApiPtBr(ExplorarActivity.this, c));
+                }
                 ArrayAdapter<String> spAdapter = new ArrayAdapter<>(ExplorarActivity.this,
                         android.R.layout.simple_spinner_item, opcoes);
                 spAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -123,7 +126,8 @@ public class ExplorarActivity extends BaseActivity {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         if (position > 0) {
-                            filtrarPorCategoria((String) parent.getItemAtPosition(position));
+                            // Envia à API o nome original (em inglês), não o rótulo traduzido
+                            filtrarPorCategoria(categorias.get(position - 1));
                         }
                     }
 

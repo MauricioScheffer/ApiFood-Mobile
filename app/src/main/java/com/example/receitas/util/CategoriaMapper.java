@@ -53,4 +53,25 @@ public final class CategoriaMapper {
                 return cat[9]; // Outros
         }
     }
+
+    /** Traduz a categoria da API (ex.: "Seafood" -> "Frutos do mar") só para exibição. */
+    public static String categoriaApiPtBr(Context ctx, String categoriaApi) {
+        return traduzir(ctx, categoriaApi, R.array.api_categorias_chaves, R.array.api_categorias_nomes);
+    }
+
+    /** Traduz a origem da API (ex.: "British" -> "Britânica") só para exibição. */
+    public static String origemApiPtBr(Context ctx, String area) {
+        return traduzir(ctx, area, R.array.api_areas_chaves, R.array.api_areas_nomes);
+    }
+
+    /** Se não houver tradução, devolve o texto original. */
+    private static String traduzir(Context ctx, String valor, int chavesId, int nomesId) {
+        if (valor == null) return "";
+        String[] chaves = ctx.getResources().getStringArray(chavesId);
+        String[] nomes = ctx.getResources().getStringArray(nomesId);
+        for (int i = 0; i < chaves.length && i < nomes.length; i++) {
+            if (chaves[i].equalsIgnoreCase(valor.trim())) return nomes[i];
+        }
+        return valor;
+    }
 }
