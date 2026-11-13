@@ -121,7 +121,9 @@
     <string name="filtrar_categoria_api">Filtrar por categoria da API</string>
     <string name="explorar_instrucao">Digite o nome de um prato ou escolha uma categoria para buscar receitas.</string>
     <string name="explorar_vazio">Nenhuma receita encontrada para \"%1$s\".</string>
-    <string name="aviso_api_ingles">Os dados da TheMealDB estão em inglês.</string>
+    <string name="aviso_api_ingles">Os dados da TheMealDB são traduzidos automaticamente do inglês e podem ter imprecisões.</string>
+    <string name="traduzindo">Traduzindo…</string>
+    <string name="erro_traducao">Não foi possível traduzir agora. Exibindo o texto original em inglês.</string>
     <string name="erro_busca_vazia">Digite algo para buscar</string>
 
     <!-- ===== Detalhes da receita da API ===== -->

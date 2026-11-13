@@ -20,6 +20,7 @@ import com.example.receitas.model.Receita;
 import com.example.receitas.network.MealDbService;
 import com.example.receitas.util.PrefsManager;
 import com.example.receitas.util.ResultCallback;
+import com.example.receitas.util.TraducaoService;
 
 import java.util.List;
 
@@ -142,6 +143,7 @@ public class MainActivity extends BaseActivity {
                 pbReceitaDia.setVisibility(View.GONE);
                 tvReceitaDiaNome.setText(meal.getNome());
                 tvReceitaDiaInfo.setText(R.string.receita_do_dia_toque);
+                traduzirNomeDoDia(meal);
                 Glide.with(MainActivity.this)
                         .load(meal.getImagemUrl())
                         .placeholder(R.drawable.ic_receita_placeholder)
@@ -158,6 +160,24 @@ public class MainActivity extends BaseActivity {
                 pbReceitaDia.setVisibility(View.GONE);
                 tvReceitaDiaNome.setText("");
                 tvReceitaDiaInfo.setText(message);
+            }
+        });
+    }
+
+    /** Troca o nome da receita do dia pelo traduzido (se falhar, fica em inglês). */
+    private void traduzirNomeDoDia(Meal meal) {
+        java.util.List<Meal> unica = new java.util.ArrayList<>();
+        unica.add(meal);
+        TraducaoService.traduzirNomes(unica, new ResultCallback<java.util.List<Meal>>() {
+            @Override
+            public void onSuccess(java.util.List<Meal> traduzidas) {
+                if (!isTelaAtiva() || receitaDoDia != meal) return;
+                tvReceitaDiaNome.setText(meal.getNome());
+            }
+
+            @Override
+            public void onError(String message) {
+                // mantém o nome original em inglês
             }
         });
     }

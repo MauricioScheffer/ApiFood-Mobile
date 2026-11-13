@@ -22,6 +22,7 @@ import com.example.receitas.ui.adapter.MealAdapter;
 import com.example.receitas.util.CategoriaMapper;
 import com.example.receitas.util.PrefsManager;
 import com.example.receitas.util.ResultCallback;
+import com.example.receitas.util.TraducaoService;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -174,6 +175,7 @@ public class ExplorarActivity extends BaseActivity {
                 if (!isTelaAtiva()) return;
                 pbCarregando.setVisibility(View.GONE);
                 adapter.setItens(meals);
+                traduzirNomes(meals);
                 if (meals.isEmpty()) {
                     tvMensagem.setText(getString(R.string.explorar_vazio, termo));
                     tvMensagem.setVisibility(View.VISIBLE);
@@ -191,10 +193,31 @@ public class ExplorarActivity extends BaseActivity {
         };
     }
 
+    /** Identifica a busca atual: ignora traduções de buscas antigas. */
+    private int geracaoBusca = 0;
+
     private void mostrarCarregando() {
+        geracaoBusca++;
         pbCarregando.setVisibility(View.VISIBLE);
         tvMensagem.setVisibility(View.GONE);
         layoutErro.setVisibility(View.GONE);
+    }
+
+    /** Troca os nomes em inglês pelos traduzidos; se falhar, a lista continua em inglês. */
+    private void traduzirNomes(List<Meal> meals) {
+        final int geracao = geracaoBusca;
+        TraducaoService.traduzirNomes(meals, new ResultCallback<List<Meal>>() {
+            @Override
+            public void onSuccess(List<Meal> traduzidas) {
+                if (!isTelaAtiva() || geracao != geracaoBusca) return;
+                adapter.setItens(traduzidas);
+            }
+
+            @Override
+            public void onError(String message) {
+                Log.w(TAG, "Tradução dos nomes indisponível: " + message);
+            }
+        });
     }
 
     private void abrirDetalhes(Meal meal) {

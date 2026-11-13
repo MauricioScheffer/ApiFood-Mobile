@@ -21,6 +21,7 @@ import com.example.receitas.network.MealDbService;
 import com.example.receitas.util.CategoriaMapper;
 import com.example.receitas.util.DateUtils;
 import com.example.receitas.util.ResultCallback;
+import com.example.receitas.util.TraducaoService;
 
 /**
  DETALHES de uma receita da TheMealDB (lookup.php?i=ID).
@@ -132,6 +133,31 @@ public class MealDetalheActivity extends BaseActivity {
                 .into(ivImagem);
 
         scrollConteudo.setVisibility(View.VISIBLE);
+        traduzir(m);
+    }
+
+    /**
+     * Mostra primeiro o texto original e, quando a tradução (no aparelho) termina,
+     * troca nome, ingredientes e instruções por PT-BR. Se falhar, mantém o inglês.
+     */
+    private void traduzir(Meal m) {
+        mostrarToast(getString(R.string.traduzindo));
+        TraducaoService.traduzirMeal(m, new ResultCallback<Meal>() {
+            @Override
+            public void onSuccess(Meal traduzida) {
+                if (!isTelaAtiva() || traduzida != meal) return;
+                setTitle(traduzida.getNome());
+                tvNome.setText(traduzida.getNome());
+                tvIngredientes.setText(traduzida.getIngredientesComoTexto());
+                tvInstrucoes.setText(traduzida.getInstrucoes());
+            }
+
+            @Override
+            public void onError(String message) {
+                if (!isTelaAtiva()) return;
+                mostrarToast(getString(R.string.erro_traducao));
+            }
+        });
     }
 
     /** Converte a receita da API em uma Receita do app e abre o formulário preenchido. */

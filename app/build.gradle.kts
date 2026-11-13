@@ -38,6 +38,7 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.recyclerview)
     implementation(libs.glide)          // carregamento de imagens por URL
+    implementation(libs.mlkit.translate) // tradução inglês -> português no aparelho
 
     testImplementation(libs.junit)
 }
