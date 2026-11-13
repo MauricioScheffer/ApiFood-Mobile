@@ -12,10 +12,7 @@ import java.util.List;
 
 import static com.example.receitas.data.local.DatabaseHelper.*;
 
-/**
- * DAO (Data Access Object): todas as instruções SQL da tabela "receitas" ficam aqui.
- * Os métodos são síncronos — quem chama (SqliteReceitaRepository) roda em background.
- */
+/** Os métodos são síncronos — quem chama (SqliteReceitaRepository) roda em background.  */
 public class ReceitaDao {
 
     private static final String TAG = "ReceitaDao";
@@ -26,7 +23,6 @@ public class ReceitaDao {
         this.helper = helper;
     }
 
-    /** SELECT de todas as receitas: favoritas primeiro, depois em ordem alfabética. */
     public List<Receita> listarTodas() {
         List<Receita> lista = new ArrayList<>();
         SQLiteDatabase db = helper.getReadableDatabase();
@@ -40,7 +36,6 @@ public class ReceitaDao {
         return lista;
     }
 
-    /** SELECT por id. Retorna null se não existir. */
     public Receita buscarPorId(long id) {
         SQLiteDatabase db = helper.getReadableDatabase();
         try (Cursor c = db.query(TABELA, null, COL_ID + " = ?",
@@ -49,14 +44,14 @@ public class ReceitaDao {
         }
     }
 
-    /** INSERT. Retorna o id gerado ou -1 em caso de erro. */
+    /** INSERT  */
     public long inserir(Receita r) {
         long id = helper.getWritableDatabase().insert(TABELA, null, toContentValues(r));
         Log.d(TAG, "inserir: id=" + id);
         return id;
     }
 
-    /** UPDATE. Retorna a quantidade de linhas alteradas (1 = sucesso). */
+    /** UPDATE */
     public int atualizar(Receita r) {
         int linhas = helper.getWritableDatabase().update(TABELA, toContentValues(r),
                 COL_ID + " = ?", new String[]{String.valueOf(r.getId())});
@@ -64,7 +59,7 @@ public class ReceitaDao {
         return linhas;
     }
 
-    /** DELETE. Retorna a quantidade de linhas removidas (1 = sucesso). */
+    /** DELETE. */
     public int excluir(long id) {
         int linhas = helper.getWritableDatabase().delete(TABELA,
                 COL_ID + " = ?", new String[]{String.valueOf(id)});
@@ -72,8 +67,7 @@ public class ReceitaDao {
         return linhas;
     }
 
-    // ---------- Conversões Receita <-> banco ----------
-
+    //  Conversões Receita <-> banco
     private ContentValues toContentValues(Receita r) {
         ContentValues v = new ContentValues();
         v.put(COL_NOME, r.getNome());

@@ -48,7 +48,6 @@ public class ExplorarActivity extends BaseActivity {
     private MealDbService service;
     private PrefsManager prefs;
 
-    /** Última ação executada, para o botão "Tentar novamente". */
     private Runnable ultimaAcao;
     /** true quando a lista de categorias da API já foi carregada no Spinner. */
     private boolean categoriasCarregadas = false;
@@ -90,7 +89,7 @@ public class ExplorarActivity extends BaseActivity {
 
         carregarCategorias();
 
-        // Restaura a última busca salva nas preferências
+        // Restaura a última busca salva
         String ultimaBusca = prefs.getUltimaBusca();
         if (!ultimaBusca.isEmpty()) {
             etBuscaApi.setText(ultimaBusca);
@@ -140,7 +139,6 @@ public class ExplorarActivity extends BaseActivity {
 
             @Override
             public void onError(String message) {
-                // Sem categorias o app continua funcionando (busca por nome)
                 Log.w(TAG, "Categorias indisponíveis: " + message);
             }
         });
@@ -199,7 +197,6 @@ public class ExplorarActivity extends BaseActivity {
         layoutErro.setVisibility(View.GONE);
     }
 
-    /** Envia id e nome para a tela de detalhes (extras — R1). */
     private void abrirDetalhes(Meal meal) {
         Intent intent = new Intent(this, MealDetalheActivity.class);
         intent.putExtra(MealDetalheActivity.EXTRA_ID_MEAL, meal.getId());

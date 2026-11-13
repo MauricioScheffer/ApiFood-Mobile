@@ -11,8 +11,7 @@ import com.example.receitas.util.ResultCallback;
 import java.util.List;
 
 /**
- * Implementação do CRUD usando o SQLite do aparelho.
- * Cada operação roda em background (AppExecutors) para não travar a interface.
+ * Implementação do CRUD usando o SQLite do celularzin.
  */
 public class SqliteReceitaRepository implements ReceitaRepository {
 

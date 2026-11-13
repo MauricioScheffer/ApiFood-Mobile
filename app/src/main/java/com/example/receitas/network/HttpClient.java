@@ -15,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * Cliente HTTP mínimo usando HttpURLConnection (nativo do Java, sem bibliotecas extras).
- * ATENÇÃO: os métodos são bloqueantes — devem ser chamados fora da thread principal
+ * Os métodos são bloqueantes — devem ser chamados fora da thread principal
  * (o app faz isso através de AppExecutors).
  */
 public final class HttpClient {

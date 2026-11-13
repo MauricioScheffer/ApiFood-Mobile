@@ -7,12 +7,8 @@ import java.util.List;
 
 /**
  * Contrato do CRUD de receitas (requisito R6).
- *
- * As telas só conhecem esta interface. Existem duas implementações:
- *  - SqliteReceitaRepository: banco local no aparelho (SQLite) — padrão;
- *  - ApiReceitaRepository: banco MySQL acessado pelo backend PHP.
- * A escolha é feita em Configurações e resolvida pelo RepositoryProvider.
- * Assim, trocar de banco nao exige mudar nenhuma Activity.
+ SqliteReceitaRepository: banco local no aparelho (SQLite) — padrão;
+ ApiReceitaRepository: banco MySQL acessado pelo backend PHP.
  */
 public interface ReceitaRepository {
 
@@ -22,7 +18,7 @@ public interface ReceitaRepository {
     /** READ (um) */
     void buscarPorId(long id, ResultCallback<Receita> callback);
 
-    /** CREATE — devolve o id gerado. */
+    /** CREATE devolve o id gerado. */
     void inserir(Receita receita, ResultCallback<Long> callback);
 
     /** UPDATE */

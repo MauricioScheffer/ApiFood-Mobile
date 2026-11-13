@@ -16,14 +16,12 @@ import com.example.receitas.R;
 import com.google.android.material.snackbar.Snackbar;
 
 /**
- * Activity base: concentra o que é comum a todas as telas, evitando código repetido.
- *  - Menu de opções da ActionBar (Atualizar, Configurações, Sobre) — requisito R4;
- *  - Botão "voltar" na ActionBar;
- *  - Atalhos para Toast e Snackbar.
+ Menu de opções da ActionBar (Atualizar, Configurações, Sobre) — requisito R4;
+ Botão "voltar" na ActionBar;
+ Atalhos para Toast e Snackbar.
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
-    /** Tag para o Logcat: usa o nome da classe filha (ex.: "MainActivity"). */
     protected final String TAG = getClass().getSimpleName();
 
     /** Chave usada pelas telas para devolver uma mensagem de resultado à tela anterior. */
@@ -37,21 +35,17 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
-    /** Telas que não têm o que atualizar podem sobrescrever e retornar false. */
     protected boolean podeAtualizar() {
         return true;
     }
 
-    /** Chamado quando o usuário toca em "Atualizar" no menu. */
-    protected void onAtualizar() {
-        // Implementado pelas telas que precisam
-    }
+    protected void onAtualizar() {}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_comum, menu);
         menu.findItem(R.id.action_atualizar).setVisible(podeAtualizar());
-        // Não faz sentido abrir Configurações estando nela
+
         menu.findItem(R.id.action_configuracoes).setVisible(!(this instanceof ConfiguracoesActivity));
         return true;
     }
@@ -106,7 +100,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         Snackbar.make(raiz, mensagem, Snackbar.LENGTH_LONG).show();
     }
 
-    /** Mostra a mensagem devolvida por outra tela (EXTRA_MENSAGEM), se houver. */
     protected void mostrarMensagemDoResultado(Intent data) {
         if (data != null && data.hasExtra(EXTRA_MENSAGEM)) {
             mostrarSnackbar(data.getStringExtra(EXTRA_MENSAGEM));
