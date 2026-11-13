@@ -5,9 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Receita vinda da API pública TheMealDB (somente leitura).
- * Nas buscas por categoria a API devolve só id, nome e imagem;
- * os demais campos são preenchidos na consulta de detalhes (lookup.php).
+ Receita vinda da API pública TheMealDB (leitura).
+ Nas buscas por categoria a API devolve o id, nome e imagem;
  */
 public class Meal implements Serializable {
 

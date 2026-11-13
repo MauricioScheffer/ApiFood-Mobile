@@ -8,8 +8,8 @@ import com.example.receitas.data.remote.ApiReceitaRepository;
 import com.example.receitas.util.PrefsManager;
 
 /**
- * Decide qual banco de dados usar (SQLite local ou MySQL via backend PHP)
- * de acordo com a preferência salva em Configurações.
+ Decide qual banco de dados usar (SQLite local ou MySQL via backend PHP)
+ de acordo com a Configuração salva.
  */
 public final class RepositoryProvider {
 

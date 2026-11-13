@@ -24,9 +24,9 @@ import com.example.receitas.util.ResultCallback;
 import java.util.List;
 
 /**
- * HOME — tela inicial.
- * Mostra saudação com o nome salvo nas preferências, um resumo das receitas
- * e a "Receita do dia" buscada na API TheMealDB.
+ HOME
+ Mostra saudação com o nome salvo nas preferências, um resumo das receitas
+ e a "Receita do dia" buscada na API TheMealDB.
  */
 public class MainActivity extends BaseActivity {
 

@@ -23,9 +23,9 @@ import com.example.receitas.util.DateUtils;
 import com.example.receitas.util.ResultCallback;
 
 /**
- * DETALHES de uma receita da TheMealDB (lookup.php?i=ID).
- * O botão "Salvar nas minhas receitas" abre o formulário já preenchido,
- * enviando um objeto Receita pelo Intent.
+ DETALHES de uma receita da TheMealDB (lookup.php?i=ID).
+ O botão "Salvar nas minhas receitas" abre o formulário já preenchido,
+ Enviando um objeto Receita pelo Intent.
  */
 public class MealDetalheActivity extends BaseActivity {
 

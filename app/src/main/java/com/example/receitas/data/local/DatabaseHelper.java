@@ -8,10 +8,7 @@ import android.util.Log;
 
 import com.example.receitas.util.DateUtils;
 
-/**
- * Cria e versiona o banco SQLite local "receitas.db".
- * Os nomes das colunas são os mesmos da tabela MySQL (database/schema.sql).
- */
+/** Cria e versiona o banco SQLite local "receitas.db". */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String TAG = "DatabaseHelper";
@@ -51,7 +48,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     + COL_DATA + " TEXT NOT NULL, "
                     + COL_ID_MEAL + " TEXT)";
 
-    // Singleton: uma única instância do helper para o app inteiro
     private static DatabaseHelper instancia;
 
     public static synchronized DatabaseHelper getInstance(Context context) {
@@ -74,14 +70,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Estratégia simples para trabalho acadêmico: recria a tabela.
-        // Em produção, use ALTER TABLE para não perder os dados.
         Log.w(TAG, "Atualizando banco da versão " + oldVersion + " para " + newVersion);
         db.execSQL("DROP TABLE IF EXISTS " + TABELA);
         onCreate(db);
     }
 
-    /** Duas receitas de exemplo para o app não abrir vazio. */
     private void inserirExemplos(SQLiteDatabase db) {
         ContentValues brigadeiro = new ContentValues();
         brigadeiro.put(COL_NOME, "Brigadeiro");
